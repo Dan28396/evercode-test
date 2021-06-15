@@ -11,11 +11,11 @@ export const walletsSlice = createSlice({
         totalProfit: 0
     },
     reducers: {
-        calculateTotalBalance(state) {
+        calculateBalanceProfit(state) {
             let balance = 0, profit = 0;
             state.wallets.forEach(wallet => {
                 balance += wallet.balance * wallet.price
-                profit += wallet.price * wallet.balance - wallet.price * wallet.balance / (1 + wallet.changePCT24Hour)
+                profit += wallet.price * wallet.balance - wallet.price * wallet.balance / (1 + wallet.changePCT24Hour / 100)
             })
             state.balance = balance;
             state.totalProfit = profit;
@@ -25,7 +25,7 @@ export const walletsSlice = createSlice({
     extraReducers: {
         [fetchData.fulfilled]: (state, action) => {
             state.wallets = action.payload
-            walletsSlice.caseReducers.calculateTotalBalance(state)
+            walletsSlice.caseReducers.calculateBalanceProfit(state)
         }
     }
 });

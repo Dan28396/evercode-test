@@ -6,7 +6,7 @@ import TopBar from "../TopBar/TopBar";
 import BalanceCard from "../BalanceCard/BalanceCard";
 import ChangesCard from "../ChangesCard/ChangesCard";
 import CurrencyCard from "../CurrencyCard/CurrencyCard";
-import {calculateTotalBalance, fetchData, selectAllWallets} from "../../Store/Wallet";
+import {fetchData, selectAllWallets} from "../../Store/Wallet";
 
 function HomePage(props) {
     const dispatch = useDispatch()
@@ -15,10 +15,6 @@ function HomePage(props) {
     useEffect(() => {
         dispatch(fetchData())
     }, [dispatch, fetchData])
-
-    useEffect(() => {
-        dispatch(calculateTotalBalance())
-    },[wallets])
 
     return (
         <div className={styles.homepage_wrapper}>

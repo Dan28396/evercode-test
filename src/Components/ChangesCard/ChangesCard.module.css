@@ -1,0 +1,32 @@
+.changes_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.changes_title {
+    color: var(--main-grey-color);
+    font-size: 14px;
+}
+
+.changes_content_profit {
+    color: var(--main-green-color);
+    font-size: 14px;
+}
+
+.changes_content_profit::after {
+    margin-left: 2px;
+    content: '🠕';
+}
+
+.changes_content_loss {
+    color: var(--main-red-color);
+    font-size: 14px;
+}
+
+.changes_content_loss::after {
+    margin-left: 2px;
+    content: '🠓';
+}

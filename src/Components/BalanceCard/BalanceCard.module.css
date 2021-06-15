@@ -1,0 +1,23 @@
+.balance_card_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.balance_card_text {
+    color: var(--main-grey-color);
+    font-size: 12px;
+}
+
+.balance_card_sum {
+    font-size: 36px;
+    font-weight: lighter;
+}
+
+.dollar_sign {
+    font-size: 20px;
+    vertical-align: top;
+    margin: 0 5px;
+}

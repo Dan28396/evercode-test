@@ -1,0 +1,6 @@
+.homepage_wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    align-content: center;
+}

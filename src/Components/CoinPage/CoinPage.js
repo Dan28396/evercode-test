@@ -15,7 +15,7 @@ function CoinPage(props) {
     useEffect(() => {
         dispatch(fetchData())
         dispatch(fetchHistoricalData(coinName))
-    }, [coinName])
+    }, [coinName, dispatch])
 
     return (
         <div className='page_wrapper'>

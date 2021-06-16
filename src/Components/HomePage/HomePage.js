@@ -13,7 +13,7 @@ function HomePage(props) {
 
     useEffect(() => {
         dispatch(fetchData())
-    }, [dispatch, fetchData])
+    }, [dispatch])
 
     return (
         <div className='page_wrapper'>

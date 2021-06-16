@@ -1,7 +1,7 @@
 ## Тестовое задание для Evercode Lab
 Демо: https://evercode-test.vercel.app/
 
-##TODO
+## TODO
 
 1) Ленивая загрузка
 2) Получение live-обновлений по WebSocket

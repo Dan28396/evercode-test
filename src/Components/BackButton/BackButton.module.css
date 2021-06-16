@@ -1,4 +1,7 @@
 .back_btn {
-    width: 24px;
-    height: 24px;
+    height: 20px;
+}
+
+.link_btn {
+    height: 20px;
 }

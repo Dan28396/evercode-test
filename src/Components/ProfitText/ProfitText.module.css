@@ -1,0 +1,41 @@
+.profit {
+    color: var(--main-green-color);
+}
+
+.loss {
+    color: var(--main-red-color);
+}
+
+/* Absolute */
+
+.profit.absolute::after {
+    margin-left: 2px;
+    content: '🠕';
+}
+
+.profit.absolute::before {
+    margin-right: 2px;
+    content: '+';
+}
+
+.loss.absolute::after {
+    margin-left: 2px;
+    content: '🠗';
+}
+
+.loss.absolute::before {
+    margin-right: 2px;
+    content: '-';
+}
+
+/* Percent */
+
+.profit.percent::before {
+    margin-right: 2px;
+    content: '+';
+}
+
+.loss.percent::before {
+    margin-right: 2px;
+    content: '-';
+}

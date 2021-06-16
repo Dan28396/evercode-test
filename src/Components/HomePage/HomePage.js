@@ -1,5 +1,4 @@
 import React, {useEffect} from 'react';
-import styles from './HomePage.module.css'
 import {useDispatch, useSelector} from "react-redux";
 
 import TopBar from "../TopBar/TopBar";
@@ -17,8 +16,8 @@ function HomePage(props) {
     }, [dispatch, fetchData])
 
     return (
-        <div className={styles.homepage_wrapper}>
-            <TopBar/>
+        <div className='page_wrapper'>
+            <TopBar isMainPage={true}/>
             <BalanceCard/>
             <ChangesCard/>
             {wallets.map((wallet, index) => {

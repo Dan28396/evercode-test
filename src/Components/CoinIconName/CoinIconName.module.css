@@ -1,0 +1,36 @@
+.card_wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.card_icon {
+    font-size: 25px;
+}
+
+.card_icon_big {
+    font-size: 35px;
+}
+
+.card_name_wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5px;
+}
+
+.card_name {
+    font-size: 16px;
+}
+
+.card_name_big {
+    font-size: 18px;
+}
+
+.card_fullname {
+    color: var(--main-grey-color);
+    font-size: 12px;
+}
+
+.card_fullname_big {
+    color: var(--main-grey-color);
+    font-size: 14px;
+}

@@ -1,19 +1,18 @@
 import React from 'react';
+import {useHistory} from "react-router-dom";
 import styles from './CurrencyCard.module.css'
+import CoinIconName from "../CoinIconName/CoinIconName";
+import ProfitText from "../ProfitText/ProfitText";
 
 function CurrencyCard({wallet}) {
+    const history = useHistory();
+
     return (
-        <div className={styles.card_wrapper}>
+        <div className={styles.card_wrapper} onClick={() => history.push(`/coins/${wallet.name}`)}>
             <div className={styles.card}>
-                <div className={styles.card_name_wrapper}>
-                    <span className={`icon icon-${wallet.name.toLowerCase()} ${styles.card_icon}`}></span>
-                    <div className={styles.card_name}>
-                        <h2>{wallet.name}</h2>
-                        <p className={styles.card_currency_fullname}>{wallet.fullname}</p>
-                    </div>
-                </div>
+                <CoinIconName wallet={wallet}/>
                 <div className={styles.card_balance_wrapper}>
-                    <h2>{wallet.balance}</h2>
+                    <h2>{wallet.balance.toLocaleString('en-US', {maximumFractionDigits: 10})}</h2>
                     <p className={styles.card_balance_dollar}>${(wallet.balance * wallet.price).toLocaleString('en-US', {maximumFractionDigits: 2})}</p>
                 </div>
             </div>
@@ -24,7 +23,7 @@ function CurrencyCard({wallet}) {
                     <p className={styles.card_price_text}>Price</p>
                 </div>
                 <div className={styles.card_balance_wrapper}>
-                    <h2 className={wallet.changePCT24Hour > 0 ? styles.card_profit : styles.card_loss}>{wallet.changePCT24Hour.toFixed(2)}%</h2>
+                    <ProfitText profit={wallet.changePCT24Hour} fontSize={16}/>
                     <p className={styles.card_price_text}>Profit / Loss</p>
                 </div>
             </div>

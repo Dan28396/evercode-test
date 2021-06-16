@@ -21,6 +21,11 @@
     content: '🠕';
 }
 
+.changes_content_profit::before {
+    margin-right: 2px;
+    content: '+';
+}
+
 .changes_content_loss {
     color: var(--main-red-color);
     font-size: 14px;
@@ -28,5 +33,10 @@
 
 .changes_content_loss::after {
     margin-left: 2px;
-    content: '🠓';
+    content: '🠗';
+}
+
+.changes_content_loss::before {
+    margin-right: 2px;
+    content: '-';
 }

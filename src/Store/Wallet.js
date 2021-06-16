@@ -1,12 +1,15 @@
 import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
-import {getNewData} from "./utils";
+import {getHistoricalData, getNewData} from "../utils";
 
 export const fetchData = createAsyncThunk('wallets/fetchData', getNewData)
+
+export const fetchHistoricalData = createAsyncThunk('wallets/fetchHistoricalData', getHistoricalData)
 
 export const walletsSlice = createSlice({
     name: 'wallets',
     initialState: {
         wallets: [],
+        historicalData: {},
         balance: 0,
         totalProfit: 0
     },
@@ -24,8 +27,15 @@ export const walletsSlice = createSlice({
     },
     extraReducers: {
         [fetchData.fulfilled]: (state, action) => {
-            state.wallets = action.payload
+            if (action.payload) {
+                state.wallets = action.payload
+            }
             walletsSlice.caseReducers.calculateBalanceProfit(state)
+        },
+        [fetchHistoricalData.fulfilled]: (state, action) => {
+            if (action.payload) {
+                state.historicalData[action.payload.coin] = action.payload.historicalData
+            }
         }
     }
 });
@@ -33,6 +43,7 @@ export const walletsSlice = createSlice({
 export const selectAllWallets = state => state.wallets.wallets
 export const selectBalance = state => state.wallets.balance
 export const selectTotalProfit = state => state.wallets.totalProfit
+export const selectHistoricalDataByName = (state, name) => state.wallets.historicalData[name]
 
 export const {calculateTotalBalance} = walletsSlice.actions;
 

@@ -4,7 +4,6 @@ import {useSelector} from "react-redux";
 import {selectBalance} from "../../Store/Wallet";
 
 
-
 function BalanceCard(props) {
     const balance = useSelector(selectBalance)
 
@@ -12,7 +11,10 @@ function BalanceCard(props) {
         <div className={style.balance_card_wrapper}>
             <p className={style.balance_card_text}>Your total balance</p>
             <h2 className={style.balance_card_sum}><span
-                className={style.dollar_sign}>$</span>{balance.toLocaleString('en-US', {maximumFractionDigits: 2, minimumFractionDigits: 2})}</h2>
+                className={style.dollar_sign}>$</span>{balance.toLocaleString('en-US', {
+                maximumFractionDigits: 2,
+                minimumFractionDigits: 2
+            })}</h2>
         </div>
     );
 }

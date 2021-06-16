@@ -1,0 +1,33 @@
+.card_wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 6px;
+    margin: 10px 3px;
+    font-size: 14px;
+    flex: 0 0 auto;
+    border: solid var(--main-card-color) 2px;
+}
+
+.card_wrapper.big {
+    border: none;
+}
+
+.card_wrapper.active {
+    background: var(--main-card-color);
+}
+
+.balance_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-left: 5px;
+}
+
+.card_name_big {
+    font-size: 18px;
+}
+
+.card_name {
+    font-size: 16px;
+}

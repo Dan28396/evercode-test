@@ -14,30 +14,6 @@
     font-size: 12px;
 }
 
-.card_name_wrapper {
-    display: flex;
-}
-
-.card_icon {
-    font-size: 25px;
-}
-
-.card_name_wrapper {
-    display: flex;
-    align-items: center;
-}
-
-.card_name {
-    display: flex;
-    flex-direction: column;
-    margin-left: 5px;
-}
-
-.card_currency_fullname {
-    color: var(--main-grey-color);
-    font-size: 12px;
-}
-
 .card_balance_wrapper {
     display: flex;
     flex-direction: column;
@@ -57,23 +33,10 @@
     color: var(--main-grey-color);
 }
 
-.card_profit{
-    color: var(--main-green-color);
-}
-
-.card_loss{
-    color: var(--main-red-color);
-}
-
 hr {
     width: 90%;
     border: 0;
     height: 2px;
     background: var(--main-grey-color);
     opacity: 0.15;
-}
-
-h2 {
-    font-weight: lighter;
-    font-size: 16px;
 }
